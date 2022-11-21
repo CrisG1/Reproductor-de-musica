@@ -35,10 +35,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.mtbbarra = new XComponent.SliderBar.MACTrackBar();
             this.btnborrar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnright = new System.Windows.Forms.Button();
             this.btnleft = new System.Windows.Forms.Button();
@@ -47,6 +45,8 @@
             this.btnparar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnpausar = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.mtbbarra = new XComponent.SliderBar.MACTrackBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -126,52 +126,6 @@
             this.panel1.Size = new System.Drawing.Size(634, 168);
             this.panel1.TabIndex = 13;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(299, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 22);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Lista de reproducción:";
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, -1);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(634, 324);
-            this.axWindowsMediaPlayer1.TabIndex = 14;
-            // 
-            // mtbbarra
-            // 
-            this.mtbbarra.BackColor = System.Drawing.Color.Transparent;
-            this.mtbbarra.BorderColor = System.Drawing.Color.Transparent;
-            this.mtbbarra.BorderStyle = XComponent.SliderBar.MACBorderStyle.Bump;
-            this.mtbbarra.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbbarra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
-            this.mtbbarra.IndentHeight = 6;
-            this.mtbbarra.Location = new System.Drawing.Point(0, 319);
-            this.mtbbarra.Maximum = 100;
-            this.mtbbarra.Minimum = 0;
-            this.mtbbarra.Name = "mtbbarra";
-            this.mtbbarra.Size = new System.Drawing.Size(634, 28);
-            this.mtbbarra.TabIndex = 16;
-            this.mtbbarra.TextTickStyle = System.Windows.Forms.TickStyle.None;
-            this.mtbbarra.TickColor = System.Drawing.Color.Red;
-            this.mtbbarra.TickHeight = 4;
-            this.mtbbarra.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.mtbbarra.TrackerColor = System.Drawing.Color.Red;
-            this.mtbbarra.TrackerSize = new System.Drawing.Size(16, 16);
-            this.mtbbarra.TrackLineColor = System.Drawing.Color.Gray;
-            this.mtbbarra.TrackLineHeight = 3;
-            this.mtbbarra.TrackLineSelectedColor = System.Drawing.Color.Red;
-            this.mtbbarra.Value = 0;
-            this.mtbbarra.Scroll += new System.EventHandler(this.mtbbarra_Scroll);
-            // 
             // btnborrar
             // 
             this.btnborrar.BackgroundImage = global::Reproductor_de_musica.Properties.Resources.Trash;
@@ -186,6 +140,17 @@
             this.btnborrar.TabIndex = 16;
             this.btnborrar.UseVisualStyleBackColor = true;
             this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(299, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 22);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Lista de reproducción:";
             // 
             // button2
             // 
@@ -309,6 +274,41 @@
             this.btnpausar.UseVisualStyleBackColor = true;
             this.btnpausar.Click += new System.EventHandler(this.btnpausar_Click);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, -1);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(634, 324);
+            this.axWindowsMediaPlayer1.TabIndex = 14;
+            // 
+            // mtbbarra
+            // 
+            this.mtbbarra.BackColor = System.Drawing.Color.Transparent;
+            this.mtbbarra.BorderColor = System.Drawing.Color.Transparent;
+            this.mtbbarra.BorderStyle = XComponent.SliderBar.MACBorderStyle.Bump;
+            this.mtbbarra.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbbarra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.mtbbarra.IndentHeight = 6;
+            this.mtbbarra.Location = new System.Drawing.Point(0, 319);
+            this.mtbbarra.Maximum = 100;
+            this.mtbbarra.Minimum = 0;
+            this.mtbbarra.Name = "mtbbarra";
+            this.mtbbarra.Size = new System.Drawing.Size(634, 28);
+            this.mtbbarra.TabIndex = 16;
+            this.mtbbarra.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtbbarra.TickColor = System.Drawing.Color.Red;
+            this.mtbbarra.TickHeight = 4;
+            this.mtbbarra.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtbbarra.TrackerColor = System.Drawing.Color.Red;
+            this.mtbbarra.TrackerSize = new System.Drawing.Size(16, 16);
+            this.mtbbarra.TrackLineColor = System.Drawing.Color.Gray;
+            this.mtbbarra.TrackLineHeight = 3;
+            this.mtbbarra.TrackLineSelectedColor = System.Drawing.Color.Red;
+            this.mtbbarra.Value = 0;
+            this.mtbbarra.Scroll += new System.EventHandler(this.mtbbarra_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +324,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
