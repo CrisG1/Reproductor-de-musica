@@ -1,0 +1,19 @@
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Interop.WMPLib.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.ResolveComReference.cache
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.Form1.resources
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.GenerateResource.cache
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Reproductor de musica.exe.config
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Reproductor de musica.exe
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Reproductor de musica.pdb
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Interop.WMPLib.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.Properties.Resources.resources
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.CoreCompileInputs.cache
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.exe
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.pdb
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.AssemblyReference.cache
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\MACTrackBarLib.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.CopyComplete
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Control.Draggable.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.Url.resources

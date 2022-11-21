@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b0a46d1b-5edd-4a75-94df-3a323a80598c": {
+      "ProjectGuid": "b0a46d1b-5edd-4a75-94df-3a323a80598c",
+      "DisplayName": "Reproductor de musica",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
