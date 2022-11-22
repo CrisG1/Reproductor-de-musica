@@ -30,12 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.mtbvolume = new XComponent.SliderBar.MACTrackBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnborrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnright = new System.Windows.Forms.Button();
@@ -45,25 +43,16 @@
             this.btnparar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnpausar = new System.Windows.Forms.Button();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.mtbbarra = new XComponent.SliderBar.MACTrackBar();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblInicio = new System.Windows.Forms.Label();
+            this.lblFinal = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.Cancion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(303, 45);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(331, 120);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // mtbvolume
             // 
@@ -108,13 +97,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnborrar);
+            this.panel1.Controls.Add(this.lblFinal);
+            this.panel1.Controls.Add(this.lblInicio);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnright);
             this.panel1.Controls.Add(this.mtbvolume);
-            this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.btnleft);
             this.panel1.Controls.Add(this.btnreproducir);
             this.panel1.Controls.Add(this.btnelegir);
@@ -125,21 +115,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(634, 168);
             this.panel1.TabIndex = 13;
-            // 
-            // btnborrar
-            // 
-            this.btnborrar.BackgroundImage = global::Reproductor_de_musica.Properties.Resources.Trash;
-            this.btnborrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnborrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnborrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnborrar.FlatAppearance.BorderSize = 0;
-            this.btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnborrar.Location = new System.Drawing.Point(256, 118);
-            this.btnborrar.Name = "btnborrar";
-            this.btnborrar.Size = new System.Drawing.Size(41, 47);
-            this.btnborrar.TabIndex = 16;
-            this.btnborrar.UseVisualStyleBackColor = true;
-            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // label1
             // 
@@ -272,16 +247,7 @@
             this.btnpausar.Size = new System.Drawing.Size(41, 43);
             this.btnpausar.TabIndex = 3;
             this.btnpausar.UseVisualStyleBackColor = true;
-            this.btnpausar.Click += new System.EventHandler(this.btnpausar_Click);
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, -1);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(634, 324);
-            this.axWindowsMediaPlayer1.TabIndex = 14;
+            
             // 
             // mtbbarra
             // 
@@ -309,6 +275,49 @@
             this.mtbbarra.Value = 0;
             this.mtbbarra.Scroll += new System.EventHandler(this.mtbbarra_Scroll);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cancion});
+            this.dataGridView1.Location = new System.Drawing.Point(303, 46);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(328, 119);
+            this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // lblInicio
+            // 
+            this.lblInicio.AutoSize = true;
+            this.lblInicio.Location = new System.Drawing.Point(4, 4);
+            this.lblInicio.Name = "lblInicio";
+            this.lblInicio.Size = new System.Drawing.Size(28, 13);
+            this.lblInicio.TabIndex = 18;
+            this.lblInicio.Text = "0.00";
+            // 
+            // lblFinal
+            // 
+            this.lblFinal.AutoSize = true;
+            this.lblFinal.Location = new System.Drawing.Point(596, 4);
+            this.lblFinal.Name = "lblFinal";
+            this.lblFinal.Size = new System.Drawing.Size(28, 13);
+            this.lblFinal.TabIndex = 19;
+            this.lblFinal.Text = "0.00";
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, -1);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(634, 324);
+            this.axWindowsMediaPlayer1.TabIndex = 14;
+            // 
+            // Cancion
+            // 
+            this.Cancion.HeaderText = "Cancion";
+            this.Cancion.Name = "Cancion";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,13 +336,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnpausar;
         private System.Windows.Forms.Button btnparar;
         private System.Windows.Forms.Button btnelegir;
@@ -349,7 +358,10 @@
         public System.Windows.Forms.Button btnreproducir;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private XComponent.SliderBar.MACTrackBar mtbbarra;
-        private System.Windows.Forms.Button btnborrar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblFinal;
+        private System.Windows.Forms.Label lblInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cancion;
     }
 }
 

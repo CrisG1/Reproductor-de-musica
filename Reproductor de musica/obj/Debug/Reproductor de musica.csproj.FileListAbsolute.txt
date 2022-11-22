@@ -16,4 +16,21 @@ C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debu
 C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\MACTrackBarLib.dll
 C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor de musica.csproj.CopyComplete
 C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Control.Draggable.dll
-C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.Url.resources
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\MySqlConnector.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Buffers.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Memory.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\MySqlConnector.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Buffers.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Memory.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.Login.resources
+C:\Users\crist\source\repos\Reproductor de musica\Reproductor de musica\obj\Debug\Reproductor_de_musica.CreateAccount.resources

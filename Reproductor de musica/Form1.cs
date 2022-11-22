@@ -15,11 +15,6 @@ namespace Reproductor_de_musica
         int cont;
         private void btnelegir_Click(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count > 0)
-            {
-                listBox1.Items.Clear();
-                MessageBox.Show("Se elimino la lista anterior", "SISTEMA");  
-            }
             OpenFileDialog File = new OpenFileDialog();
             File.Multiselect = true;
             File.Filter = "Media Files|*.mpg;*.avi;*.wma;*.mov;*.wav;*.mp2;*.mp3;*.mp4|All Files|*.*";
@@ -29,29 +24,25 @@ namespace Reproductor_de_musica
                 ruta = File.FileNames;
                 for (int i = 0; i < archivo.Length; i++)
                 {
-                    listBox1.Items.Add(archivo[i]);
+                    dataGridView1.Rows.Add(archivo[i]);
                 }
             }
         }
     
         private void btnreproducir_Click(object sender, EventArgs e)
         {   
-            if (listBox1.Items.Count == 0)
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPaused)
             {
-                MessageBox.Show("No hay canciones para reproducir, porfavor agregar...", "SISTEMA");
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                btnpausar.BringToFront();
+                timer1.Start();
             }
             else
             {
-                axWindowsMediaPlayer1.Ctlcontrols.play();  
-                btnpausar.BringToFront();
+                axWindowsMediaPlayer1.Ctlcontrols.pause();  
+                timer1.Stop();
             }
         }
-        private void btnpausar_Click(object sender, EventArgs e)
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.pause();
-            btnreproducir.BringToFront();
-        }
-
         private void btnparar_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
@@ -76,12 +67,12 @@ namespace Reproductor_de_musica
             mtbvolume.Value = axWindowsMediaPlayer1.settings.volume;
             mtbbarra.Value = (int)axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
             label2.Text = mtbvolume.Value.ToString();
-            //axWindowsMediaPlayer1.
         }
         public void Datos()
         {
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
+                mtbbarra.Maximum = (int)axWindowsMediaPlayer1.Ctlcontrols.currentItem.duration;
                 timer1.Start();
             }else if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPaused){
                 timer1.Stop();              
@@ -90,6 +81,7 @@ namespace Reproductor_de_musica
                 timer1.Stop();
                
             }
+            lblInicio.Text = axWindowsMediaPlayer1.Ctlcontrols.currentPositionString;
         }
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
@@ -98,37 +90,38 @@ namespace Reproductor_de_musica
 
         private void btnright_Click(object sender, EventArgs e)
         {
-            cont = listBox1.SelectedIndex;
+            cont = dataGridView1.CurrentRow.Index;
             cont += 1;
-            if (listBox1.Items.Count == cont && listBox1.Items.Count > 0)
+            if (dataGridView1.Rows.Count == cont && dataGridView1.Rows.Count > 0)
             {
-            cont = 0;
-            listBox1.SetSelected(cont, true);
+                cont = 0;
+                dataGridView1.CurrentCell.Value = cont;
             }
-            else if (listBox1.Items.Count > 0)
+            else if (dataGridView1.Rows.Count > 0)
             {
-            listBox1.SetSelected(cont,true);
-
+                dataGridView1.CurrentCell.Value = cont;
+                dataGridView1.Rows[cont].Selected = true;
             }
             else
             {
                 MessageBox.Show("No hay medio para saltar", "SISTEMA");
-            } 
-           Datos();
+            }
+            Datos();
         }
+
         private void btnleft_Click(object sender, EventArgs e)
         {
-            cont = listBox1.SelectedIndex;
-            cont += 1;
-            if (listBox1.Items.Count == cont && listBox1.Items.Count > 0)
+            cont = dataGridView1.CurrentRow.Index;
+            cont -= 1;
+            if (dataGridView1.Rows.Count == cont && dataGridView1.Rows.Count > 0)
             {
                 cont = 0;
-                listBox1.SetSelected(cont, true);
+                dataGridView1.CurrentCell.Value = cont;
             }
-            else if (listBox1.Items.Count > 0)
+            else if (dataGridView1.Rows.Count > 0)
             {
-                listBox1.SetSelected(cont, true);
-
+                dataGridView1.CurrentCell.Value = cont;
+                dataGridView1.Rows[cont].Selected = true;
             }
             else
             {
@@ -158,41 +151,24 @@ namespace Reproductor_de_musica
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = mtbbarra.Value;
         }
 
-        private void btnborrar_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione cancion para eliminar del listado", "SISTEMA", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                //listBox1.Items.RemoveAt(archivo);
-                listBox1.Items.Remove(listBox1.SelectedItem);
-                MessageBox.Show("Se elimino la canción", "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.Database = "";
-            builder.UserID = "";
-            builder.Password = "";
+            try
+            {
+                dataGridView1.DataSource = conexion.Consulta("Select * from canciones");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Verifique la conexion o consulta" + ex.Message, "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {   
-            try
-            { 
-                axWindowsMediaPlayer1.URL = ruta[listBox1.SelectedIndex];              
-                btnpausar.BringToFront();
-            }
-            catch (Exception)
-            {
-    
-            }  
-        }
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dataGridView1.CurrentRow.Index;
+            axWindowsMediaPlayer1.URL = dataGridView1.Rows[index].Cells[4].Value.ToString();
+            lblFinal.Text = dataGridView1.Rows[index].Cells[3].Value.ToString();
+            timer1.Start();
+        }       
     }
 }
